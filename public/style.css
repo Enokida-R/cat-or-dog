@@ -1,0 +1,184 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    /*background: rgba(232,232,237,.4);*/
+}
+
+header {
+    background-image: url('headerImage.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をカバーとして設定 */
+    background-position: 50% 36%; /* 背景画像の位置を中央に設定 */
+    position: static;/* 相対位置 */
+    height: 200px; /* ヘッダーの高さを設定 */
+    display: flex;
+    align-items: center; /* 中央揃えのための設定 */
+    justify-content: center; /* 中央揃えのための設定 */
+    color: white; /* テキストの色を白に設定 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* テキストの影を追加して読みやすく */
+}
+
+
+header img {
+    width: 100%;
+    height: 400px;
+}
+
+#section{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向の中央揃え */
+    justify-content: center; /* 垂直方向の中央揃え */
+    width: 100%;
+    height: 100vh; /* ビューポートの高さに合わせる */
+    padding: 20px; /* 上下左右の余白 */
+    flex: 1; /* 利用可能なスペースをすべて使用 */
+    overflow: auto; /* 必要に応じてスクロール */
+}
+
+footer{
+    background-color: #f5f5f7;
+    color: #6e6e73;
+    text-align: center;
+    padding: 20px 0; /* パディングを増やしてスペースを確保 */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* フォントを太くして見出しを強調 */
+    height: 60px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px; /* 見出しのサイズを調整 */
+}
+
+#animalsContainer {
+    display: flex;
+    justify-content: center; /* 子要素（#containerCatと#containerDog）を中央に配置 */
+    flex-wrap: wrap;
+    width: 100%; /* コンテナの幅を親要素に合わせる */
+    margin-bottom: 20px; /* 下部の余白 */
+}
+
+#containerCat, #containerDog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 48%; /* 両サイドにマージンを考慮 */
+    margin: 1%; /* 余白を少し追加 */
+
+}
+
+#containerCat img, #containerDog img {
+    width: 48%; /* コンテナ幅に対する画像の幅 */
+}
+
+#buttonsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* 上部の余白 */
+}
+
+button {
+    margin: 10px;
+    padding: 12px 20px;
+    background-color: #FFC107; /* アクセントカラーを変更 */
+    color: #333; /* テキストカラーを暗めに設定 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease; /* スムーズな遷移効果 */
+}
+
+#Catbutton{
+    background-color: rgba(128, 0, 32, 0.6);
+}
+
+#Dogbutton{
+    background-color: rgba(0, 0, 128, 0.6);
+}
+
+#Catbutton:hover{
+    background-color: rgba(128, 0, 32, 1);
+}
+
+#Dogbutton:hover{
+    background-color: rgba(0, 0, 128, 1);
+}
+
+#deCat{
+    background-color: #e30000;
+}
+
+#deDog{
+    background-color: #007aff;
+}
+
+#chartBox {
+    display: flex;
+    justify-content: center; /* 内部の要素を中央に配置 */
+    flex-direction: column; /* 要素を縦方向に並べる */
+    align-items: center; /* 水平方向の中央揃え */
+    width: auto; /* 必要に応じて幅を調整 */
+    margin-bottom: 20px; /* 要素間の余白 */
+}
+
+#chartBox, #buttonsContainer, #animalsContainer {
+    margin-bottom: 20px; /* 要素間のマージンを追加 */
+}
+
+
+/* モーダルウィンドウ全体のスタイル */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 画面に対して固定 */
+    z-index: 1; /* 他の要素より前面に */
+    left: 50%; /* 左端から画面の50%の位置に */
+    top: 50%; /* 上端から画面の50%の位置に */
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* 半透明の黒色 */
+    transform: translate(-50%, -50%); /* 位置を左上方向に調整 */
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 30px; /* 閉じるボタンのための上部余白を追加 */
+}
+
+
+/* 閉じるボタン */
+.close {
+    position: absolute;
+    top: 10px; /* モーダルの上部に配置 */
+    right: 15px; /* 右端から15pxの位置に */
+    color: #fff; /* 白色のテキスト */
+    font-size: 24px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    cursor: pointer; /* ホバー時のカーソル変更 */
+}
+
+/* モーダルウィンドウの画像 */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 98%; /* 最大幅を90%に設定 */
+    max-height: 87vh; /* 最大高さをビューポートの80%に設定 */
+}
+
+
+/* 保存ボタンのスタイル */
+#save-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

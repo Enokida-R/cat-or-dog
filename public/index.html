@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>犬かキャットかで死ぬまで喧嘩しよう！</h1>
+    </header>
+
+    <div id="section">
+        <div id="chartBox">
+            <canvas id="myChart" width="200px" height="200px"></canvas>
+        </div>
+        
+        <div id="buttonsContainer">
+            <button id="Catbutton" onClick="Catbutton()">更新(ネコ)</button>
+            <button id="deCat" onClick="deleteButtonCat()">delete</button>
+            <button id="Dogbutton" onClick="Dogbutton()">更新(イッヌ)</button>
+            <button id="deDog" onClick="deleteButtonDog()">delete</button>
+        </div>
+            
+
+        <div id="animalsContainer">
+            <div id="containerCat"></div>
+            <div id="containerDog"></div>
+        </div>
+
+        <!-- モーダルウィンドウ -->
+        <div id="photo-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
+            <button id="save-button">画像を保存</button>
+        </div>
+
+    </div>
+        
+
+    
+
+    <footer>
+        <a href="https://thecatapi.com/">The Cat API</a>
+        <a href="https://thedogapi.com/">The Dog API</a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

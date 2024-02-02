@@ -76,9 +76,9 @@ h1 {
 
 #buttonsContainer {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px; /* 上部の余白 */
+    flex-direction: row; /* ボタンを横並びにする */
+    flex-wrap: wrap; /* 必要に応じて折り返す */
+    justify-content: center; /* 中央寄せ */
 }
 
 button {
@@ -181,4 +181,53 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 150px; /* スマホではヘッダーの高さを小さく */
+    }
+
+    header img {
+        height: auto; /* 画像の高さを自動調整 */
+    }
+
+    #section {
+        padding: 10px; /* スマホでは余白を少なく */
+    }
+
+    #animalsContainer {
+        /*flex-direction: column; /* スマホでは要素を縦に並べる */
+        width: 100%; /* 幅を100%に */
+    }
+
+    #containerCat, #containerDog{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 48%; /* 両サイドにマージンを考慮 */
+        margin: 1%; /* 余白を少し追加 */
+
+    }
+
+    #containerCat img, #containerDog img {
+        width: 48%; 
+    }
+
+    #buttonsContainer {
+        display: flex;
+        /*flex-direction: row; /* ボタンを横並びにする */
+        justify-content: center; /* 中央寄せ */
+        flex-direction: column; /* スマートフォンでは縦並びに変更する可能性も検討
+    }
+
+    button {
+        padding: 10px 15px; /* ボタンのパディングを調整 */
+        font-size: 14px; /* ボタンのフォントサイズを小さく */
+    }
+
+    .modal-content {
+        max-width: 95%; /* モーダルの最大幅を調整 */
+        max-height: 80vh; /* モーダルの最大高さを調整 */
+    }
 }

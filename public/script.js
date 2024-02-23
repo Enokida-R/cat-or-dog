@@ -20,6 +20,7 @@ async function Catbutton () {
     const dataC = await res.json();
     const containerCat = document.getElementById('containerCat') || createImageContainerCat();
     containerCat.innerHTML = '';
+    console.log(dataC);
 
 
     dataC.slice(0,6).forEach(item => {
@@ -59,6 +60,8 @@ async function Dogbutton() {
     containerDog.innerHTML = '';
     const resD = await fetch ('/dogimages');
     const dataD = await resD.json();
+
+    console.log(dataD);
 
     for (let i = 0; i < 6; i++) {
         const dogUrl = await dataD.message[i];
